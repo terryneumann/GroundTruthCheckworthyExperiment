@@ -1,0 +1,217 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form>
+  <crowd-tabs>
+    <crowd-tab header='Part I: Survey'>
+      <h2>Part I Instructions - Please Read Carefully</h2>
+      <p>In the first part of the task, we will (i) ask you some demographic questions, (ii) assess your political beliefs/stances on issues, and (iii) asses how well you discern fake from real news.</p>
+      <p>Please only fill out this survey once. <strong>After completing the survey, make sure you selected "Yes" to the last question "Did you just complete the survey?".</strong> Then, move on to Part II and continue with the check-worthiness assessment.</p>
+      <p>Once you move on to Part II and hit SUBMIT, you will be redirected back to this survey, with your answers removed. This is expected, and there's no need to fill out the survey again. Simply navigate back to Part II and continue with the assessment.</p>
+
+      <strong>To summarize...</strong>
+      <ol>
+        <li>First, fill out the survey and make sure you selected "Yes" to the last question.</li>
+        <li>Next, move on to Part II, and SUBMIT your first response.</li>
+        <li>After submitting, navigate back to Part II, and continue with the assessment until complete.</li>
+      </ol>
+
+      <p>Thank you for your participation, and please do your best to answer honestly and attentively. As a side note, the data you provide will not have any personal identifiers attached to it, meaning it is truly anonymous.</p>
+
+      <hr>
+      <br>
+      <br>
+
+      <h2> Demographic Questions.</h2>
+      <p>In this section, we will ask you some demographic questions. </p>
+
+      <h3>Select your gender.</h3>
+      <select name="demog-gender" style="font-size: large" required>
+        <option value="">(Please select)</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Non-Binary</option>
+        <option>Other</option>
+      </select>
+
+
+      <h3>Select your race.</h3>
+      <select name="demog-race" style="font-size: large" required>
+        <option value="">(Please select)</option>
+        <option>Asian</option>
+        <option>White</option>
+        <option>Black</option>
+        <option>Hispanic</option>
+        <option>Other</option>
+      </select>
+
+      <h3>Select your age range.</h3>
+      <select name="demog-age" style="font-size: large" required>
+        <option value="">(Please select)</option>
+        <option>Less than 20 years old</option>
+        <option>21-30 years old</option>
+        <option>31-40 years old</option>
+        <option>41-50 years old</option>
+        <option>51-60 years old</option>
+        <option>More than 60 years old</option>
+      </select>
+
+      <h3>Select your highest educational attainment.</h3>
+      <select name="demog-educ" style="font-size: large" required>
+        <option value="">(Please select)</option>
+        <option>No High School</option>
+        <option>High School Diploma</option>
+        <option>Some College</option>
+        <option>Bachelor's Degree</option>
+        <option>Master's Degree</option>
+        <option>PhD or other doctorate</option>
+      </select>
+
+      <hr>
+      <br>
+      <br>
+
+      <h2> Ideological Questions.</h2>
+      <p>Indicate the extent to which you feel positive or negative towards each issue by scoring each issue from 0 to 100. Scores of 0 indicate greater negativity, and scores of 100 indicate greater positivity. Scores of 50 indicate that you feel neutral about the issue.</p>
+
+      <h3>Abortion</h3>
+      <crowd-slider name='ideology-abortion' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Limited government</h3>
+      <crowd-slider name='ideology-limited-government' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Military and national security</h3>
+      <crowd-slider name='ideology-military' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Religion</h3>
+      <crowd-slider name='ideology-religion' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Welfare benefits</h3>
+      <crowd-slider name='ideology-welfare' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Gun ownership</h3>
+      <crowd-slider name='ideology-gun-ownership' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Marriage only exists between a man and a woman</h3>
+      <crowd-slider name='ideology-marriage' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Fiscal responsibility</h3>
+      <crowd-slider name='ideology-fiscal' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>The rights of corporations</h3>
+      <crowd-slider name='ideology-corporations' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>The existence of transgendered people</h3>
+      <crowd-slider name='ideology-transgendered' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Unmoderated, free speech on internet platforms</h3>
+      <crowd-slider name='ideology-speech' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Purported scientific discoveries by the government</h3>
+      <crowd-slider name='ideology-science' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <h3>Less stringent immigration policies</h3>
+      <crowd-slider name='ideology-immigration' min="0" max="100" step="5" pin="true"></crowd-slider>
+
+      <hr>
+      <br>
+      <br>
+
+      <h2>Fake news identification</h2>
+      <p>How good are you at spotting fake news headlines? Please examine the following news headlines and categorize them as either Fake/Deceptive or Real/Factual.</p>
+
+      <h3>Certain Vaccines are Loaded with Dangerous Chemicals and Toxins</h3>
+      <select name="identification-fake-1" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Global Warming Age Gap: Younger Americans Most Worried</h3>
+      <select name="identification-real-1" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>New Study: Left-Wingers Are More Likely to Lie to Get a Higher Salary</h3>
+      <select name="identification-fake-2" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>The Government Is Knowingly Spreading Disease Through the Airwaves and Food Supply</h3>
+      <select name="identification-fake-3" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Attitudes Toward EU Are Largely Positive, Both Within Europe and Outside It</h3>
+      <select name="identification-real-2" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Hyatt Will Remove Small Bottles from Hotel Bathrooms by 2021</h3>
+      <select name="identification-real-3" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Government Officials Have Manipulated Stock Prices to Hide Scandals</h3>
+      <select name="identification-fake-4" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Republicans Divided in Views of Trump’s Conduct, Democrats Are Broadly Critical</h3>
+      <select name="identification-real-4" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <hr>
+      <br>
+      <br>
+
+      <h2>Did you just finish the survey?</h2>
+      <select name="survey-complete" style="font-size: large" selected="No">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+
+    </crowd-tab>
+
+
+    <crowd-tab header='Part II: Check-worthiness assessment'>
+
+    <h2>Part II Instructions - Please Read Carefully</h2>
+    <p>In this section, you will read claims as if you saw them on your social media feed. For each claim, consider whether you think that a professional fact-checker should verify the claim in the tweet.</p>
+    <p>If you feel that the general public may be harmed if this claim becomes viral, select "Yes, very urgent".</p>
+    <p>This task is used to build algorithms that automatically detect "check-worthy" claims made on social media. We are curious about your opinions; there are no right or wrong answers, but please read each claim carefully and answer honestly. Your opinions matter!</p>
+    <hr>
+    <br>
+    <br>
+    <h2>Do you think that a professional fact-checker should verify the claim in the tweet?</h2>
+
+      <crowd-classifier
+      name="checkworthy-assessment"
+      categories='{{ task.input.labels | to_json }}'
+      header='{{ task.input.header }}' >
+
+      <classification-target>
+          {{ task.input.source }}
+      </classification-target>
+
+
+    </crowd-classifier>
+
+    </crowd-tab>
+  </crowd-tabs>
+
+</crowd-form>
