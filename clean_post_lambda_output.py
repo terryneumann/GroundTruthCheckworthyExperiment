@@ -31,11 +31,11 @@ for item in range(len(survey_responses)):
         content_json = json.loads(worker_response['annotationData']['content'])
         if content_json['survey-complete'] == 'Yes':
             worker_info.update({worker_id:
-                                {'Gender':content_json['demog-gender'],
-                                 'Race':content_json['demog-race'],
-                                 'Age':content_json['demog-age'],
-                                 'Education':content_json['demog-educ'],
-                                 'Sexual Orientation':content_json['demog-sexual'],
+                                {'Demog - Gender':content_json['demog-gender'],
+                                 'Demog - Race':content_json['demog-race'],
+                                 'Demog - Age':content_json['demog-age'],
+                                 'Demog - Education':content_json['demog-educ'],
+                                 #'Demog - Sexual Orientation':content_json['demog-sexual'],
                                  'Ideology - Abortion':content_json['ideology-abortion'],
                                  'Ideology - Limited Government':content_json['ideology-limited-government'],
                                  'Ideology - Military': content_json['ideology-military'],
@@ -58,9 +58,9 @@ for item in range(len(survey_responses)):
                                  'Identification - Real 3':content_json['identification-real-3'],
                                  'Identification - Real 4':content_json['identification-real-4']}})
         if dataObjectId in consolidated_responses:
-            consolidated_responses[dataObjectId].update({worker_id:content_json['checkworthy-assessment']['label']})
+            consolidated_responses[dataObjectId]['responses'].update({worker_id:content_json['checkworthy-assessment']['label']})
         elif dataObjectId not in consolidated_responses:
-            consolidated_responses.update({dataObjectId:{worker_id:content_json['checkworthy-assessment']['label']}})
+            consolidated_responses.update({dataObjectId:{'content': dataObject, 'responses': {worker_id:content_json['checkworthy-assessment']['label']}}})
             
         
         
