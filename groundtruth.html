@@ -25,7 +25,7 @@
       <p>In this section, we will ask you some demographic questions. </p>
 
       <h3>Select your gender.</h3>
-      <select name="demog-gender" style="font-size: large" required>
+      <select name="demog-gender" style="font-size: large">
         <option value="">(Please select)</option>
         <option>Male</option>
         <option>Female</option>
@@ -35,7 +35,7 @@
 
 
       <h3>Select your race.</h3>
-      <select name="demog-race" style="font-size: large" required>
+      <select name="demog-race" style="font-size: large">
         <option value="">(Please select)</option>
         <option>Asian</option>
         <option>White</option>
@@ -45,7 +45,7 @@
       </select>
 
       <h3>Select your age range.</h3>
-      <select name="demog-age" style="font-size: large" required>
+      <select name="demog-age" style="font-size: large">
         <option value="">(Please select)</option>
         <option>Less than 20 years old</option>
         <option>21-30 years old</option>
@@ -56,7 +56,7 @@
       </select>
 
       <h3>Select your highest educational attainment.</h3>
-      <select name="demog-educ" style="font-size: large" required>
+      <select name="demog-educ" style="font-size: large">
         <option value="">(Please select)</option>
         <option>No High School</option>
         <option>High School Diploma</option>
@@ -65,6 +65,17 @@
         <option>Master's Degree</option>
         <option>PhD or other doctorate</option>
       </select>
+
+      <h3>Select your sexual orientation.</h3>
+      <select name="demog-sexual" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Heterosexual</option>
+        <option>Homosexual</option>
+        <option>Bisexual</option>
+        <option>Asexual</option>
+        <option>Other</option>
+      </select>
+
 
       <hr>
       <br>
@@ -208,8 +219,11 @@
           {{ task.input.source }}
       </classification-target>
 
-
     </crowd-classifier>
+    <h3>To what extent do you feel your identity or lived experience gives you unique knowledge to answer this claim?</h3>
+    <p>(Ex. 0 = my identity is not relevant at all, 100 = my identity is critical to my understanding of the claim)</p>
+    <crowd-slider name='relevance' min="0" max="100" step="5" pin="true"></crowd-slider>
+
 
     </crowd-tab>
   </crowd-tabs>
