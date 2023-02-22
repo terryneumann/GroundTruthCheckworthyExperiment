@@ -16,4 +16,4 @@ for index, row in gt_raw.iterrows():
     out.append(row['labels'].split('|'))
     
 gt_raw['labels'] = out
-gt_raw.to_json('/Users/tdn897/Desktop/Misinformation Detection Paper/test.manifest', orient = 'records', lines=True)
+gt_raw.to_json('/Users/tdn897/Desktop/Misinformation Detection Paper/GroundTruthCheckworthyExperiment/GroundTruthCheckworthyExperiment/test.manifest', orient = 'records', lines=True)

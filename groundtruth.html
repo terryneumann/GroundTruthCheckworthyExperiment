@@ -2,17 +2,18 @@
 
 <crowd-form>
   <crowd-tabs>
-    <crowd-tab header='Part I: Survey'>
-      <h2>Part I Instructions - Please Read Carefully</h2>
-      <p>In the first part of the task, we will (i) ask you some demographic questions, (ii) assess your political beliefs/stances on issues, and (iii) asses how well you discern fake from real news.</p>
-      <p>Please only fill out this survey once. <strong>After completing the survey, make sure you selected "Yes" to the last question "Did you just complete the survey?".</strong> Then, move on to Part II and continue with the check-worthiness assessment.</p>
-      <p>Once you move on to Part II and hit SUBMIT, you will be redirected back to this survey, with your answers removed. This is expected, and there's no need to fill out the survey again. Simply navigate back to Part II and continue with the assessment.</p>
+    <crowd-tab header='Part I: Task Instructions'>
+      <h2>Please Read Carefully</h2>
+      <p>In Part II of the task (Survey), we will ask you some demographic questions and assess how well you discern fake from real news headlines.</p>
+      <strong>After completing the survey, make sure you selected "Yes" to the last question "Did you just complete the survey?".</strong> Then, move on to Part III and continue with the assessment.</p>
+      <p>In Part III of the task (Check-worthiness Assessment), we will ask for your opinions regarding whether trending claims on social media should be fact checked.</p>
+      <p>Once you move on to Part III and hit SUBMIT, you will be redirected back to this instruction page. This is expected. Simply navigate back to Part III and continue with the assessment.</p>
 
       <strong>To summarize...</strong>
       <ol>
-        <li>First, fill out the survey and make sure you selected "Yes" to the last question.</li>
-        <li>Next, move on to Part II, and SUBMIT your first response.</li>
-        <li>After submitting, navigate back to Part II, and continue with the assessment until complete.</li>
+        <li>First, fill out the survey in Part II and make sure you selected "Yes" to the last question.</li>
+        <li>Next, move on to Part III, and SUBMIT your first response.</li>
+        <li>After submitting, you will land back at this instruction tab. Navigate back to Part III, and continue with the assessment until complete.</li>
       </ol>
 
       <p>Thank you for your participation, and please do your best to answer honestly and attentively. As a side note, the data you provide will not have any personal identifiers attached to it, meaning it is truly anonymous.</p>
@@ -20,6 +21,10 @@
       <hr>
       <br>
       <br>
+
+      </crowd-tab>
+
+      <crowd-tab header='Part II: Survey'>
 
       <h2> Demographic Questions.</h2>
       <p>In this section, we will ask you some demographic questions. </p>
@@ -81,53 +86,8 @@
       <br>
       <br>
 
-      <h2> Ideological Questions.</h2>
-      <p>Indicate the extent to which you feel positive or negative towards each issue by scoring each issue from 0 to 100. Scores of 0 indicate greater negativity, and scores of 100 indicate greater positivity. Scores of 50 indicate that you feel neutral about the issue.</p>
 
-      <h3>Abortion</h3>
-      <crowd-slider name='ideology-abortion' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Limited government</h3>
-      <crowd-slider name='ideology-limited-government' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Military and national security</h3>
-      <crowd-slider name='ideology-military' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Religion</h3>
-      <crowd-slider name='ideology-religion' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Welfare benefits</h3>
-      <crowd-slider name='ideology-welfare' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Gun ownership</h3>
-      <crowd-slider name='ideology-gun-ownership' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Marriage only exists between a man and a woman</h3>
-      <crowd-slider name='ideology-marriage' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Fiscal responsibility</h3>
-      <crowd-slider name='ideology-fiscal' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>The rights of corporations</h3>
-      <crowd-slider name='ideology-corporations' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>The existence of transgendered people</h3>
-      <crowd-slider name='ideology-transgendered' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Unmoderated, free speech on internet platforms</h3>
-      <crowd-slider name='ideology-speech' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Purported scientific discoveries by the government</h3>
-      <crowd-slider name='ideology-science' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <h3>Less stringent immigration policies</h3>
-      <crowd-slider name='ideology-immigration' min="0" max="100" step="5" pin="true"></crowd-slider>
-
-      <hr>
-      <br>
-      <br>
-
-      <h2>Fake news identification</h2>
+      <h2>Fake News Headline Challenge</h2>
       <p>How good are you at spotting fake news headlines? Please examine the following news headlines and categorize them as either Fake/Deceptive or Real/Factual.</p>
 
       <h3>Certain Vaccines are Loaded with Dangerous Chemicals and Toxins</h3>
@@ -196,36 +156,102 @@
         <option>Yes</option>
       </select>
 
+      <p>If you just finished the survey, please move on to Part III: Check-worthiness assessment. There is no need to return to this page. </p>
+
     </crowd-tab>
 
 
-    <crowd-tab header='Part II: Check-worthiness assessment'>
+    <crowd-tab header='Part III: Check-worthiness assessment'>
 
-    <h2>Part II Instructions - Please Read Carefully</h2>
-    <p>In this section, you will read claims as if you saw them on your social media feed. For each claim, consider whether you think that a professional fact-checker should verify the claim in the tweet.</p>
-    <p>If you feel that the general public may be harmed if this claim becomes viral, select "Yes, very urgent".</p>
-    <p>This task is used to build algorithms that automatically detect "check-worthy" claims made on social media. We are curious about your opinions; there are no right or wrong answers, but please read each claim carefully and answer honestly. Your opinions matter!</p>
+    <h2>Part III Instructions - Please Read Carefully</h2>
+    <p>In this section, you will read claims that are currently or have recently been trending on social media.
+      These claims make assertions that in theory could be verified as either being true or false. Some of these claims will contain false assertions which can be harmful towards people, groups of people, and other institutions.</p>
+    <p>We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
     <hr>
     <br>
     <br>
-    <h2>Do you think that a professional fact-checker should verify the claim in the tweet?</h2>
 
       <crowd-classifier
       name="checkworthy-assessment"
       categories='{{ task.input.labels | to_json }}'
       header='{{ task.input.header }}' >
 
+
       <classification-target>
-          {{ task.input.source }}
+        <h2 style='color:blue'>{{ task.input.source }}</h2>
+          <div id= 'otherQuestions'>
+
+          <br>
+          <h3>Q1. Please identify any specific "named entities" found in this claim. If there are multiple, seperate them with a ';'</h3>
+          <p>From Wikipedia: "A named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name"</p>
+          <textarea id="eval" name="eval" rows="4" cols="50" required></textarea>
+          <br>
+          <h3>Q2. How important do you think it is to fact-check this claim?</h3>
+          <select name='checkworthy_assessment' required>
+            <option value="">Please Select</option>
+            <option>Not Important</option>
+            <option>Somewhat Important</option>
+            <option>Important</option>
+            <option>Very Important</option>
+          </select>
+
+          <h3>Q3. To what extent does the claim appear to contain false information?</h3>
+          <select name='truth_perception' required>
+            <option value="">Please Select</option>
+            <option>Definitely does not contain false information</option>
+            <option>Probably contains no false information</option>
+            <option>Probably contains false information</option>
+            <option>Definitely contains false information</option>
+          </select>
+
+          <h3>Q4. To what extent will the claim have an impact on or be of interest to the general public?</h3>
+          <select name='general_public_assessment' required>
+            <option value="">Please Select</option>
+            <option>NO, definitely not of interest</option>
+            <option>NO, probably not of interest</option>
+            <option>YES, probably of interest</option>
+            <option>YES, definitely of interest</option>
+          </select>
+
+
+          <h3>Q5. To what extent does this claim appear to be harmful to society, person(s), or institutions?</h3>
+          <select name='society_assessment' required>
+            <option value="">Please Select</option>
+            <option>NO, not harmful</option>
+            <option>NO, probably not not harmful</option>
+            <option>YES, probably harmful</option>
+            <option>YES, definitely harmful</option>
+          </select>
+
+          </div>
       </classification-target>
 
+
+
+
+
     </crowd-classifier>
-    <h3>To what extent do you feel your identity or lived experience gives you unique knowledge to answer this claim?</h3>
-    <p>(Ex. 0 = my identity is not relevant at all, 100 = my identity is critical to my understanding of the claim)</p>
-    <crowd-slider name='relevance' min="0" max="100" step="5" pin="true"></crowd-slider>
+
 
 
     </crowd-tab>
   </crowd-tabs>
 
 </crowd-form>
+
+<script>
+
+document.addEventListener('all-crowd-elements-ready', myFunction);
+
+
+function myFunction() {
+       document
+      .querySelector('crowd-classifier')
+      .shadowRoot
+      .querySelector('crowd-form')
+      .form
+      .appendChild(otherQuestions);
+  }
+
+
+</script>
