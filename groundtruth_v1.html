@@ -1,0 +1,257 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form>
+  <crowd-tabs>
+    <crowd-tab header='Part I: Task Instructions'>
+      <h2>Please Read Carefully</h2>
+      <p>In Part II of the task (Survey), we will ask you some demographic questions and assess how well you discern fake from real news headlines.</p>
+      <strong>After completing the survey, make sure you selected "Yes" to the last question "Did you just complete the survey?".</strong> Then, move on to Part III and continue with the assessment.</p>
+      <p>In Part III of the task (Check-worthiness Assessment), we will ask for your opinions regarding whether trending claims on social media should be fact checked.</p>
+      <p>Once you move on to Part III and hit SUBMIT, you will be redirected back to this instruction page. This is expected. Simply navigate back to Part III and continue with the assessment.</p>
+
+      <strong>To summarize...</strong>
+      <ol>
+        <li>First, fill out the survey in Part II and make sure you selected "Yes" to the last question.</li>
+        <li>Next, move on to Part III, and SUBMIT your first response.</li>
+        <li>After submitting, you will land back at this instruction tab. Navigate back to Part III, and continue with the assessment until complete.</li>
+      </ol>
+
+      <p>Thank you for your participation, and please do your best to answer honestly and attentively. As a side note, the data you provide will not have any personal identifiers attached to it, meaning it is truly anonymous.</p>
+
+      <hr>
+      <br>
+      <br>
+
+      </crowd-tab>
+
+      <crowd-tab header='Part II: Survey'>
+
+      <h2> Demographic Questions.</h2>
+      <p>In this section, we will ask you some demographic questions. </p>
+
+      <h3>Select your gender.</h3>
+      <select name="demog-gender" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Non-Binary</option>
+        <option>Other</option>
+      </select>
+
+
+      <h3>Select your race.</h3>
+      <select name="demog-race" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Asian</option>
+        <option>White</option>
+        <option>Black</option>
+        <option>Hispanic</option>
+        <option>Other</option>
+      </select>
+
+      <h3>Select your age range.</h3>
+      <select name="demog-age" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Less than 20 years old</option>
+        <option>21-30 years old</option>
+        <option>31-40 years old</option>
+        <option>41-50 years old</option>
+        <option>51-60 years old</option>
+        <option>More than 60 years old</option>
+      </select>
+
+      <h3>Select your highest educational attainment.</h3>
+      <select name="demog-educ" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>No High School</option>
+        <option>High School Diploma</option>
+        <option>Some College</option>
+        <option>Bachelor's Degree</option>
+        <option>Master's Degree</option>
+        <option>PhD or other doctorate</option>
+      </select>
+
+      <h3>Select your sexual orientation.</h3>
+      <select name="demog-sexual" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Heterosexual</option>
+        <option>Homosexual</option>
+        <option>Bisexual</option>
+        <option>Asexual</option>
+        <option>Other</option>
+      </select>
+
+
+      <hr>
+      <br>
+      <br>
+
+
+      <h2>Fake News Headline Challenge</h2>
+      <p>How good are you at spotting fake news headlines? Please examine the following news headlines and categorize them as either Fake/Deceptive or Real/Factual.</p>
+
+      <h3>Certain Vaccines are Loaded with Dangerous Chemicals and Toxins</h3>
+      <select name="identification-fake-1" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Global Warming Age Gap: Younger Americans Most Worried</h3>
+      <select name="identification-real-1" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>New Study: Left-Wingers Are More Likely to Lie to Get a Higher Salary</h3>
+      <select name="identification-fake-2" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>The Government Is Knowingly Spreading Disease Through the Airwaves and Food Supply</h3>
+      <select name="identification-fake-3" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Attitudes Toward EU Are Largely Positive, Both Within Europe and Outside It</h3>
+      <select name="identification-real-2" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Hyatt Will Remove Small Bottles from Hotel Bathrooms by 2021</h3>
+      <select name="identification-real-3" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Government Officials Have Manipulated Stock Prices to Hide Scandals</h3>
+      <select name="identification-fake-4" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <h3>Republicans Divided in Views of Trump’s Conduct, Democrats Are Broadly Critical</h3>
+      <select name="identification-real-4" style="font-size: large">
+        <option value="">(Please select)</option>
+        <option>Real/Actual</option>
+        <option>Fake/Deceptive</option>
+      </select>
+
+      <hr>
+      <br>
+      <br>
+
+      <h2>Did you just finish the survey?</h2>
+      <select name="survey-complete" style="font-size: large" selected="No">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+
+      <p>If you just finished the survey, please move on to Part III: Check-worthiness assessment. There is no need to return to this page. </p>
+
+    </crowd-tab>
+
+
+    <crowd-tab header='Part III: Check-worthiness assessment'>
+
+    <h2>Part III Instructions - Please Read Carefully</h2>
+    <p>In this section, you will read claims that are currently or have recently been trending on social media.
+      These claims make assertions that in theory could be verified as either being true or false. Some of these claims will contain false assertions which can be harmful towards people, groups of people, and other institutions.</p>
+    <p>We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
+    <hr>
+    <br>
+    <br>
+
+      <crowd-classifier
+      name="checkworthy-assessment"
+      categories='{{ task.input.labels | to_json }}'
+      header='{{ task.input.header }}' >
+
+
+      <classification-target>
+        <h2 style='color:blue'>{{ task.input.source }}</h2>
+          <div id= 'otherQuestions'>
+
+          <br>
+          <h3>Q1. Please identify any specific "named entities" found in this claim. If there are multiple, seperate them with a ';'</h3>
+          <p>From Wikipedia: "A named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name"</p>
+          <textarea id="eval" name="eval" rows="4" cols="50" required></textarea>
+          <br>
+          <h3>Q2. How important do you think it is to fact-check this claim?</h3>
+          <select name='checkworthy_assessment' required>
+            <option value="">Please Select</option>
+            <option>Not Important</option>
+            <option>Somewhat Important</option>
+            <option>Important</option>
+            <option>Very Important</option>
+          </select>
+
+          <h3>Q3. To what extent does the claim appear to contain false information?</h3>
+          <select name='truth_perception' required>
+            <option value="">Please Select</option>
+            <option>Definitely does not contain false information</option>
+            <option>Probably contains no false information</option>
+            <option>Probably contains false information</option>
+            <option>Definitely contains false information</option>
+          </select>
+
+          <h3>Q4. To what extent will the claim have an impact on or be of interest to the general public?</h3>
+          <select name='general_public_assessment' required>
+            <option value="">Please Select</option>
+            <option>NO, definitely not of interest</option>
+            <option>NO, probably not of interest</option>
+            <option>YES, probably of interest</option>
+            <option>YES, definitely of interest</option>
+          </select>
+
+
+          <h3>Q5. To what extent does this claim appear to be harmful to society, person(s), or institutions?</h3>
+          <select name='society_assessment' required>
+            <option value="">Please Select</option>
+            <option>NO, not harmful</option>
+            <option>NO, probably not not harmful</option>
+            <option>YES, probably harmful</option>
+            <option>YES, definitely harmful</option>
+          </select>
+
+          </div>
+      </classification-target>
+
+
+
+
+
+    </crowd-classifier>
+
+
+
+    </crowd-tab>
+  </crowd-tabs>
+
+</crowd-form>
+
+<script>
+
+document.addEventListener('all-crowd-elements-ready', myFunction);
+
+
+function myFunction() {
+       document
+      .querySelector('crowd-classifier')
+      .shadowRoot
+      .querySelector('crowd-form')
+      .form
+      .appendChild(otherQuestions);
+  }
+
+
+</script>
