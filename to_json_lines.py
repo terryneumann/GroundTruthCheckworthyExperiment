@@ -13,6 +13,7 @@ gt_raw = pd.read_excel('/Users/tdn897/Desktop/Misinformation Detection Paper/Gro
 
 out = []
 for index, row in gt_raw.iterrows():
+    row['source'] = 'Claim: ' + row['source']
     out.append(row['labels'].split('|'))
     
 gt_raw['labels'] = out
