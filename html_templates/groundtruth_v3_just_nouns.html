@@ -1,0 +1,24 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+
+<div style="text-align: center; width: 100%">
+<br>
+<br>
+<h2>Instructions: Please Read Carefully</h2>
+<p>In this section, you will read claims that are currently or have recently been trending on social media.</p>
+<p>These claims make assertions that could be verified as either being true or false.</p>
+<p>Some of these claims will contain false assertions which can be harmful towards people, groups of people, and other institutions.</p>
+<p>We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
+<p><strong>Please also complete the DEMOGRAPHIC SURVEY and FAKE NEWS HEADLINE CHALLENGE located below Question 7. THIS ONLY NEEDS TO BE COMPLETED ONCE.</strong>
+<hr>
+<br>
+<br>
+</div>
+
+
+<crowd-entity-annotation
+name="find_the_nouns"
+labels = "[{'label': 'Noun', 'shortDisplayName': 'Noun', 'fullDisplayName': 'Noun'}]"
+text='{{ task.input.source }}'
+header = 'Please Read the Claim Carefully' >
+</crowd-entity-annotation>
