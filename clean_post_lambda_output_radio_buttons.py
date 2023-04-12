@@ -177,9 +177,26 @@ for i in range(len(consolidated_request_dir)):
 
 
 consolidated_responses_frame.to_csv('../experimental_data_clean/consolidated_responses_clean.csv', index=False)
+
+worker_info_frame['pct_gold_correct'] = np.where(worker_info_frame['num_gold']==0, 1, worker_info_frame['num_gold_correct']/worker_info_frame['num_gold'])
 worker_info_frame.to_csv('../experimental_data_clean/worker_info_clean.csv')
         
         
-            
-                
-                        
+response_frame_summary = consolidated_responses_frame\
+    .groupby(['claim'])\
+        .agg(mean_checkworthy = ('assessment_checkworthy', np.mean),
+             mean_truth = ('assessment_truth', np.mean),
+             mean_general_public = ('assessment_general_public', np.mean),
+             mean_group_harm = ('assessment_group_harm', np.mean),
+             mean_group_interest = ('assessment_group_interest', np.mean))
+        
+# correlation between truth and checkworthiness
+np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_truth'])
+# correlation between checkworthiness and interest to general public
+np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_general_public'])                
+# correlation between checkworthiness and interest to general public
+np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_group_harm'])      
+# correlation between truth and interest to general public
+np.corrcoef(response_frame_summary['mean_truth'], response_frame_summary['mean_group_harm'])                
+          
+         
