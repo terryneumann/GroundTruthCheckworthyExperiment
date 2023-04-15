@@ -1,5 +1,12 @@
 <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
-
+<style>input[type=radio] {
+    display: block;
+    margin: 0 auto;
+}
+label {
+    display: inline-block;
+}
+</style>
 
 <crowd-form>
 
@@ -39,12 +46,12 @@ header='Read the claim carefully' >
     <h3>Q1. How important do you think it is to fact-check this claim?</h3>
     <br>
     <crowd-radio-group>
-  	    Not at all important <input type="radio" name="assessment_checkworthy" value="1" required></input>
-  	    <input type="radio" name="assessment_checkworthy" value="2" required></input>
-        <input type="radio" name="assessment_checkworthy" value="3" required></input>
-        <input type="radio" name="assessment_checkworthy" value="4" required></input>
-        <input type="radio" name="assessment_checkworthy" value="5" required></input>
-        <input type="radio" name="assessment_checkworthy" value="6" required></input> Extremely important
+  	    Not at all important <label><input type="radio" name="assessment_checkworthy" value="1" required></input>1</label>
+  	    <label><input type="radio" name="assessment_checkworthy" value="2" required></input>2</label>
+        <label><input type="radio" name="assessment_checkworthy" value="3" required></input>3</label>
+        <label><input type="radio" name="assessment_checkworthy" value="4" required></input>4</label>
+        <label><input type="radio" name="assessment_checkworthy" value="5" required></input>5</label>
+        <label><input type="radio" name="assessment_checkworthy" value="6" required></input>6</label> Extremely important
   	</crowd-radio-group>
     <br>
     <br>
@@ -53,12 +60,12 @@ header='Read the claim carefully' >
     <h3>Q2. To what extent does the claim appear to contain false information?</h3>
     <br>
     <crowd-radio-group>
-  	    Contains no false information <input type="radio" name="assessment_truth" value="1" required></input>
-  	    <input type="radio" name="assessment_truth" value="2" required></input>
-        <input type="radio" name="assessment_truth" value="3" required></input>
-        <input type="radio" name="assessment_truth" value="4" required></input>
-        <input type="radio" name="assessment_truth" value="5" required></input>
-        <input type="radio" name="assessment_truth" value="6" required></input> Contains entirely false information
+  	    Contains no false information <label><input type="radio" name="assessment_truth" value="1" required></input>1</label>
+  	    <label><input type="radio" name="assessment_truth" value="2" required></input>2</label>
+        <label><input type="radio" name="assessment_truth" value="3" required></input>3</label>
+        <label><input type="radio" name="assessment_truth" value="4" required></input>4</label>
+        <label><input type="radio" name="assessment_truth" value="5" required></input>5</label>
+        <label><input type="radio" name="assessment_truth" value="6" required></input>6</label> Contains entirely false information
   	</crowd-radio-group>
     <br>
     <br>
@@ -67,12 +74,12 @@ header='Read the claim carefully' >
     <h3>Q3. To what extent will the claim be of interest to the general public?</h3>
     <br>
     <crowd-radio-group>
-  	    Not at all interesting <input type="radio" name="assessment_general_public" value="1" required></input>
-  	    <input type="radio" name="assessment_general_public" value="2" required></input>
-        <input type="radio" name="assessment_general_public" value="3" required></input>
-        <input type="radio" name="assessment_general_public" value="4" required></input>
-        <input type="radio" name="assessment_general_public" value="5" required></input>
-        <input type="radio" name="assessment_general_public" value="6" required></input> Extremely interesting
+  	    Not at all interesting <label><input type="radio" name="assessment_general_public" value="1" required></input>1</label>
+  	    <label><input type="radio" name="assessment_general_public" value="2" required></input>2</label>
+        <label><input type="radio" name="assessment_general_public" value="3" required></input>3</label>
+        <label><input type="radio" name="assessment_general_public" value="4" required></input>4</label>
+        <label><input type="radio" name="assessment_general_public" value="5" required></input>5</label>
+        <label><input type="radio" name="assessment_general_public" value="6" required></input>6</label> Extremely interesting
   	</crowd-radio-group>
 
     <br>
@@ -82,12 +89,12 @@ header='Read the claim carefully' >
     <h3>Q4. How likely is this claim to disproportionately harm certain demographic groups more than others (e.g. members of a certain gender, race, nationality, religion, or sexual orientation)?</h3>
     <br>
     <crowd-radio-group>
-  	    Not at all likely <input type="radio" name="assessment_group_harm" value="1" required></input>
-  	    <input type="radio" name="assessment_group_harm" value="2" required></input>
-        <input type="radio" name="assessment_group_harm" value="3" required></input>
-        <input type="radio" name="assessment_group_harm" value="4" required></input>
-        <input type="radio" name="assessment_group_harm" value="5" required></input>
-        <input type="radio" name="assessment_group_harm" value="6" required></input> Extremely likely
+  	    Not at all likely <label><input type="radio" name="assessment_group_harm" value="1" required></input>1</label>
+  	    <label><input type="radio" name="assessment_group_harm" value="2" required></input>2</label>
+        <label><input type="radio" name="assessment_group_harm" value="3" required></input>3</label>
+        <label><input type="radio" name="assessment_group_harm" value="4" required></input>4</label>
+        <label><input type="radio" name="assessment_group_harm" value="5" required></input>5</label>
+        <label><input type="radio" name="assessment_group_harm" value="6" required></input>6</label> Extremely likely
   	</crowd-radio-group>
     <br>
     <br>
@@ -112,12 +119,12 @@ header='Read the claim carefully' >
     <h3>Q5. Is this claim likely to interest certain demographic groups much more than others (e.g. members of a certain gender, race, nationality, religion, or sexual orientation)?</h3>
     <br>
     <crowd-radio-group>
-  	    Not at all likely <input type="radio" name="assessment_group_interest" value="1" required></input>
-  	    <input type="radio" name="assessment_group_interest" value="2" required></input>
-        <input type="radio" name="assessment_group_interest" value="3" required></input>
-        <input type="radio" name="assessment_group_interest" value="4" required></input>
-        <input type="radio" name="assessment_group_interest" value="5" required></input>
-        <input type="radio" name="assessment_group_interest" value="6" required></input> Extremely likely
+  	    Not at all likely <label><input type="radio" name="assessment_group_interest" value="1" required></input>1</label>
+  	    <label><input type="radio" name="assessment_group_interest" value="2" required></input>2</label>
+        <label><input type="radio" name="assessment_group_interest" value="3" required></input>3</label>
+        <label><input type="radio" name="assessment_group_interest" value="4" required></input>4</label>
+        <label><input type="radio" name="assessment_group_interest" value="5" required></input>5</label>
+        <label><input type="radio" name="assessment_group_interest" value="6" required></input>6</label> Extremely likely
   	</crowd-radio-group>
 
     <br>
