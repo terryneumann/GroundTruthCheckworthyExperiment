@@ -1,22 +1,22 @@
-,num_gold,num_gold_correct,num_questions,demog-age,demog-educ,demog-gender,demog-race,demog-sexual,identification-fake-1,identification-fake-2,identification-fake-3,identification-fake-4,identification-real-1,identification-real-2,identification-real-3,identification-real-4
-public.us-east-1.A1GQUOWKR6X33C,3,2,7,,,,,,,,,,,,,
-public.us-east-1.AF8UBU5UVSL0F,7,5,21,31-40 years old,Master's Degree,Male,White,Heterosexual,0.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0
-public.us-east-1.A3DKSG1VT6L74U,3,2,10,41-50 years old,Bachelor's Degree,Male,White,Heterosexual,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0
-public.us-east-1.A2MODMVVUIF4K0,3,2,5,21-30 years old,Bachelor's Degree,Female,White,Heterosexual,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0
-public.us-east-1.A1HG8X94R5JJIX,0,0,1,,,,,,,,,,,,,
-public.us-east-1.A2RBX0MZELGYLM,1,0,2,,,,,,,,,,,,,
-public.us-east-1.A2OATYFM4AMDC3,2,1,6,,,,,,,,,,,,,
-public.us-east-1.ATDOFOKFEG3CI,1,0,4,More than 60 years old,Bachelor's Degree,Female,White,Heterosexual,0.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0
-public.us-east-1.A2N5T7XHHULVTL,0,0,1,,Master's Degree,Female,Black,Asexual,0.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0
-public.us-east-1.A12J4IRF5Z06BT,0,0,1,,,,,,,,,,,,,
-public.us-east-1.ALTU9DLMVRCY2,6,4,18,21-30 years old,Master's Degree,Female,White,Heterosexual,0.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0
-public.us-east-1.A34OH8N3GTAD4T,4,2,14,21-30 years old,Bachelor's Degree,Female,White,Heterosexual,0.0,1.0,0.0,0.0,1.0,1.0,0.0,1.0
-public.us-east-1.A1SL10V8CDNI9H,3,1,6,,,,,,,,,,,,,
-public.us-east-1.A1GQUOWKR6X33C,1,1,2,,,,,,,,,,,,,
-public.us-east-1.A2OATYFM4AMDC3,1,0,2,,,,,,,,,,,,,
-public.us-east-1.A1HG8X94R5JJIX,0,0,4,21-30 years old,Some College,Female,White,Bisexual,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0
-public.us-east-1.AF8UBU5UVSL0F,1,1,5,,,,,,,,,,,,,
-public.us-east-1.A3DKSG1VT6L74U,2,1,3,,,,,,,,,,,,,
-public.us-east-1.A20NNUVDL65RVV,0,0,2,,,,,,,,,,,,,
-public.us-east-1.A2RBX0MZELGYLM,1,0,1,,,,,,,,,,,,,
-public.us-east-1.A12J4IRF5Z06BT,1,1,1,31-40 years old,Bachelor's Degree,Male,White,Heterosexual,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0
+,num_gold,num_gold_correct,num_questions,demog-age,demog-educ,demog-gender,demog-race,demog-sexual,identification-fake-1,identification-fake-2,identification-fake-3,identification-fake-4,identification-real-1,identification-real-2,identification-real-3,identification-real-4,pct_gold_correct
+public.us-east-1.A1GQUOWKR6X33C,3,2,7,,,,,,,,,,,,,,0.6666666666666666
+public.us-east-1.AF8UBU5UVSL0F,7,5,21,31-40 years old,Master's Degree,Male,White,Heterosexual,0.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.7142857142857143
+public.us-east-1.A3DKSG1VT6L74U,3,2,10,41-50 years old,Bachelor's Degree,Male,White,Heterosexual,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.6666666666666666
+public.us-east-1.A2MODMVVUIF4K0,3,2,5,21-30 years old,Bachelor's Degree,Female,White,Heterosexual,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.6666666666666666
+public.us-east-1.A1HG8X94R5JJIX,0,0,1,,,,,,,,,,,,,,1.0
+public.us-east-1.A2RBX0MZELGYLM,1,0,2,,,,,,,,,,,,,,0.0
+public.us-east-1.A2OATYFM4AMDC3,2,1,6,,,,,,,,,,,,,,0.5
+public.us-east-1.ATDOFOKFEG3CI,1,0,4,More than 60 years old,Bachelor's Degree,Female,White,Heterosexual,0.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0
+public.us-east-1.A2N5T7XHHULVTL,0,0,1,,Master's Degree,Female,Black,Asexual,0.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,1.0
+public.us-east-1.A12J4IRF5Z06BT,0,0,1,,,,,,,,,,,,,,1.0
+public.us-east-1.ALTU9DLMVRCY2,6,4,18,21-30 years old,Master's Degree,Female,White,Heterosexual,0.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6666666666666666
+public.us-east-1.A34OH8N3GTAD4T,4,2,14,21-30 years old,Bachelor's Degree,Female,White,Heterosexual,0.0,1.0,0.0,0.0,1.0,1.0,0.0,1.0,0.5
+public.us-east-1.A1SL10V8CDNI9H,3,1,6,,,,,,,,,,,,,,0.3333333333333333
+public.us-east-1.A1GQUOWKR6X33C,1,1,2,,,,,,,,,,,,,,1.0
+public.us-east-1.A2OATYFM4AMDC3,1,0,2,,,,,,,,,,,,,,0.0
+public.us-east-1.A1HG8X94R5JJIX,0,0,4,21-30 years old,Some College,Female,White,Bisexual,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0
+public.us-east-1.AF8UBU5UVSL0F,1,1,5,,,,,,,,,,,,,,1.0
+public.us-east-1.A3DKSG1VT6L74U,2,1,3,,,,,,,,,,,,,,0.5
+public.us-east-1.A20NNUVDL65RVV,0,0,2,,,,,,,,,,,,,,1.0
+public.us-east-1.A2RBX0MZELGYLM,1,0,1,,,,,,,,,,,,,,0.0
+public.us-east-1.A12J4IRF5Z06BT,1,1,1,31-40 years old,Bachelor's Degree,Male,White,Heterosexual,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0

@@ -61,6 +61,7 @@ def raw_to_dict(consolidated_request, gold_list, max_likert_score):
     all_items = os.listdir(consolidated_request)
     worker_info = {}
     consolidated_responses = {}
+    gold_question_quality = {}
     for item in all_items:
         with open(consolidated_request + item) as json_file:
             survey_responses = json.load(json_file)
@@ -115,17 +116,23 @@ def raw_to_dict(consolidated_request, gold_list, max_likert_score):
                                 
                     ### 2. Analyze gold data for each worker
                     if dataObject in gold_list:
+                        if dataObject not in gold_question_quality:
+                            gold_question_quality.update({dataObject:{'num_seen':1,'num_correct':0}})
+                        else:
+                            gold_question_quality[dataObject]['num_seen'] += 1
                         worker_info[worker_id]['num_gold'] += 1
                         worker_veracity_score = content_json['assessment_truth']
                         if worker_veracity_score in [max_likert_score - 1, max_likert_score]:
                             worker_info[worker_id]['num_gold_correct'] += 1
+                            gold_question_quality[dataObject]['num_correct'] += 1
                     
-    return worker_info, consolidated_responses
+    return worker_info, consolidated_responses, gold_question_quality
 
 
-def dict_to_dataframe(worker_info, consolidated_responses):
+def dict_to_dataframe(worker_info, consolidated_responses, gold_question_quality):
     
     worker_info_frame = pd.DataFrame.from_dict(worker_info, orient='index')
+    gold_quality_frame = pd.DataFrame.from_dict(gold_question_quality, orient='index').reset_index()
     
     response_frame = pd.DataFrame()
     for c in list(consolidated_responses.keys()):
@@ -142,7 +149,7 @@ def dict_to_dataframe(worker_info, consolidated_responses):
     cols = cols[-1:] + cols[:-1]
     response_frame = response_frame[cols]
     
-    return response_frame, worker_info_frame
+    return response_frame, worker_info_frame, gold_quality_frame
 
 
 ###############################
@@ -162,41 +169,32 @@ max_likert_score = 6
 gold_list = generate_gold_list(gold_attention_data=gold_attention_data)
 consolidated_responses_frame = pd.DataFrame()
 worker_info_frame = pd.DataFrame()
-
+gold_quality_frame = pd.DataFrame()
 
 for i in range(len(consolidated_request_dir)):
-    worker_info, consolidated_responses = raw_to_dict(consolidated_request=consolidated_request_dir[i],
-                                                      gold_list = gold_list, 
-                                                      max_likert_score = max_likert_score)
     
-    cr_frame, wi_frame = dict_to_dataframe(worker_info = worker_info, 
-                                           consolidated_responses = consolidated_responses)
+    worker_info, consolidated_responses, gold_question_quality = raw_to_dict(
+        consolidated_request=consolidated_request_dir[i],
+        gold_list = gold_list, 
+        max_likert_score = max_likert_score)
+    
+    cr_frame, wi_frame, gq_frame = dict_to_dataframe(
+        worker_info = worker_info,
+        consolidated_responses = consolidated_responses,
+        gold_question_quality = gold_question_quality)
     
     consolidated_responses_frame = pd.concat([cr_frame, consolidated_responses_frame])
     worker_info_frame = pd.concat([wi_frame, worker_info_frame])
+    gold_quality_frame = pd.concat([gq_frame, gold_quality_frame])
 
 
 consolidated_responses_frame.to_csv('../experimental_data_clean/consolidated_responses_clean.csv', index=False)
 
 worker_info_frame['pct_gold_correct'] = np.where(worker_info_frame['num_gold']==0, 1, worker_info_frame['num_gold_correct']/worker_info_frame['num_gold'])
 worker_info_frame.to_csv('../experimental_data_clean/worker_info_clean.csv')
-        
-        
-response_frame_summary = consolidated_responses_frame\
-    .groupby(['claim'])\
-        .agg(mean_checkworthy = ('assessment_checkworthy', np.mean),
-             mean_truth = ('assessment_truth', np.mean),
-             mean_general_public = ('assessment_general_public', np.mean),
-             mean_group_harm = ('assessment_group_harm', np.mean),
-             mean_group_interest = ('assessment_group_interest', np.mean))
-        
-# correlation between truth and checkworthiness
-np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_truth'])
-# correlation between checkworthiness and interest to general public
-np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_general_public'])                
-# correlation between checkworthiness and interest to general public
-np.corrcoef(response_frame_summary['mean_checkworthy'], response_frame_summary['mean_group_harm'])      
-# correlation between truth and interest to general public
-np.corrcoef(response_frame_summary['mean_truth'], response_frame_summary['mean_group_harm'])                
+
+gold_quality_frame = gold_quality_frame.groupby(['index']).agg(num_seen=('num_seen', sum), num_correct=('num_correct', sum))
+
+
           
          

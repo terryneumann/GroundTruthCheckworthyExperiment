@@ -18,7 +18,7 @@ label {
 <p>These claims make assertions that could be verified as either being true or false.</p>
 <p>Some of these claims will contain false assertions which can be harmful towards people, groups of people, and other institutions.</p>
 <p>We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
-<p><strong>Please also complete the DEMOGRAPHIC SURVEY and FAKE NEWS HEADLINE CHALLENGE located below Question 6. THIS ONLY NEEDS TO BE COMPLETED ONCE.</strong>
+<p><strong>Please also complete the DEMOGRAPHIC SURVEY and FAKE NEWS HEADLINE CHALLENGE located below Question 5. THIS ONLY NEEDS TO BE COMPLETED ONCE.</strong>
 <hr>
 <br>
 <br>
@@ -96,9 +96,11 @@ header='Read the claim carefully' >
         <label><input type="radio" name="assessment_group_harm" value="5" required></input>5</label>
         <label><input type="radio" name="assessment_group_harm" value="6" required></input>6</label> Extremely likely
   	</crowd-radio-group>
+
     <br>
     <br>
-    <h4>Q5. Which groups could be adversely affected by this claim? If the claim is not harmful, choose NONE.</h4>
+
+    <h3>Q5. Which groups could be adversely affected by this claim? If the claim is not harmful to a particular group, choose NONE.</h3>
     <input type='checkbox' name = "assessment_group_harm_specify" value="RACE: White"><span style='color:green'><strong>RACE:</strong></span> White</input>
     <input type='checkbox' name = "assessment_group_harm_specify" value="RACE: African American"><span style='color:green'><strong>RACE:</strong></span> African American</input>
     <input type='checkbox' name = "assessment_group_harm_specify" value="RACE: Hispanic"><span style='color:green'><strong>RACE:</strong></span>  Hispanic</input>
@@ -118,37 +120,6 @@ header='Read the claim carefully' >
 
     <br>
     <br>
-
-    <h3>Q5. Is this claim likely to interest certain demographic groups much more than others (e.g. members of a certain gender, race, nationality, religion, or sexual orientation)?</h3>
-    <br>
-    <crowd-radio-group>
-  	    Not at all likely <label><input type="radio" name="assessment_group_interest" value="1" required></input>1</label>
-  	    <label><input type="radio" name="assessment_group_interest" value="2" required></input>2</label>
-        <label><input type="radio" name="assessment_group_interest" value="3" required></input>3</label>
-        <label><input type="radio" name="assessment_group_interest" value="4" required></input>4</label>
-        <label><input type="radio" name="assessment_group_interest" value="5" required></input>5</label>
-        <label><input type="radio" name="assessment_group_interest" value="6" required></input>6</label> Extremely likely
-  	</crowd-radio-group>
-
-    <br>
-    <br>
-    <h4>If it is likely to interest a certain group of people, please specify that group below. If it is not likely to interest a certain group of people, choose NONE.</h4>
-    <select name="assessment_group_interest_specify" required>
-      <option value=""></option>
-      <option value="NONE">NONE</option>
-      <option value="RACE: White">RACE: White</option>
-      <option value="RACE: African American">RACE: African American</option>
-      <option value="RACE: Hispanic">RACE: Hispanic</option>
-      <option value="RACE: East or South Asian">RACE: East or South Asian</option>
-      <option value="SEXUAL ORIENTATION: LGBTQ">SEXUAL ORIENTATION: LGBTQ</option>
-      <option value="SEXUAL ORIENTATION: Heterosexual">SEXUAL ORIENTATION: Heterosexual</option>
-      <option value="GENDER: Men">GENDER: Men</option>
-      <option value="GENDER: Women">GENDER: Women</option>
-      <option value="GENDER: Transgender / Non-binary">GENDER: Transgender / Non-binary</option>
-  </select>
-
-  <br>
-  <br>
 
   <h3><strong><span style='color:red'>BEFORE YOU HIT SUBMIT:</span></h3>
   <h3>Have you already completed the <u>demographic survey</u> and <u>fake news headline challenge</u>?</h3>
