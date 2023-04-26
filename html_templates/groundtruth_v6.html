@@ -27,7 +27,7 @@ label {
 
 <crowd-classifier
 name="hit_complete"
-categories='{{ task.input.labels | to_json }}'
+categories="['I have answered all of the questions', 'I have not answered all of the questions']"
 header='Read the claim carefully' >
 
   <classification-target>
@@ -60,12 +60,12 @@ header='Read the claim carefully' >
     <h3>Q2. To what extent does the claim appear to contain false information?</h3>
     <br>
     <crowd-radio-group>
-  	    Contains no false information <label><input type="radio" name="assessment_truth" value="1" required></input>1</label>
+  	    It is completely true<label><input type="radio" name="assessment_truth" value="1" required></input>1</label>
   	    <label><input type="radio" name="assessment_truth" value="2" required></input>2</label>
         <label><input type="radio" name="assessment_truth" value="3" required></input>3</label>
         <label><input type="radio" name="assessment_truth" value="4" required></input>4</label>
         <label><input type="radio" name="assessment_truth" value="5" required></input>5</label>
-        <label><input type="radio" name="assessment_truth" value="6" required></input>6</label> Contains entirely false information
+        <label><input type="radio" name="assessment_truth" value="6" required></input>6</label>It is completely false
   	</crowd-radio-group>
     <br>
     <br>
@@ -120,6 +120,10 @@ header='Read the claim carefully' >
 
     <br>
     <br>
+
+    <p>Do you have any additional feedback for us regarding this task? This section is optional.</p>
+    <textarea name="additional_info" rows="4" cols="50"></textarea>
+
 
   <h3><strong><span style='color:red'>BEFORE YOU HIT SUBMIT:</span></h3>
   <h3>Have you already completed the <u>demographic survey</u> and <u>fake news headline challenge</u>?</h3>
@@ -278,9 +282,7 @@ header='Read the claim carefully' >
  </crowd-classifier>
 
 
-
-
- </crowd-form>
+</crowd-form>
 
 <script>
 
