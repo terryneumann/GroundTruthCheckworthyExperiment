@@ -20,15 +20,15 @@ header='Read the claim carefully' >
 
   <classification-target>
   <br>
-  <br>
-  <h1 style='text-align:center; color:red'>FACT-CHECKING SURVEY</h1>
-  <p style='text-align:center'>You will read claims that are currently or have recently been trending on social media. These claims make assertions that could be verified as either being true or false.
-    We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems. If you have any comments about the task, please leave them in the comment box below.</p>
-  <p style='text-align:center'><strong>Please complete the <u>DEMOGRAPHIC SURVEY</u> and <u>FAKE NEWS HEADLINE CHALLENGE</u> located below Question 5. THIS ONLY NEEDS TO BE COMPLETED ONCE.</strong>
-  <br>
+  <h1 style='text-align:center; color:#CC4415; font-family:Georgia;'>FACT-CHECKING SURVEY</h1>
+  <p style='text-align:center'>You will read claims that are currently or have recently been trending on social media. These claims could be verified as either being true or false by fact-checkers.
+    We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
+  <p style='text-align:center'>We intend to create a dataset of true or false news/news-like content as well as annotations about the content. If you do not consent to your annotations (anonymized) being included in the released dataset, then you are not eligible to participate in this study. Please read the following <a href='https://docs.google.com/document/d/15xDvYUYNH4XEE6je_j3GI75-GBVqHREvZreFIcwYygk/edit'>CONSENT RELEASE FORM</a>, and indicate that you consent to the release of your data from this experiment in Q6 below. You will be required to submit consent during every HIT.</p>
+
+  <p style='text-align:center'><strong><u>WORK WILL BE MONITORED FOR QUALITY. WORKERS SUBMITTING POOR QUALITY WORK WILL BE BARRED FROM FUTURE WORK.</u></strong></p>
   <br>
 
-  <h2 style='font-family:Georgia; color:navy; border-width:10px; border-style:solid; border-color:#FFA500; padding: 1em; text-align: center'>{{ task.input.source }}</h2>
+  <h2 style='font-family:Georgia; color:black; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em; text-align: center'>{{ task.input.source }}</h2>
 
 
   <div id= 'otherQuestions' style="text-align: center">
@@ -38,23 +38,21 @@ header='Read the claim carefully' >
     <br>
     <br>
 
-    <h3>Q1. How important do you think it is to fact-check this claim?</h3>
-    <strong>Please be discerning; fact-checkers prioritize what claims to check based on assessments like this.</strong>
-    <br>
+    <h3>Q1. Due to limited resources, fact-checking organizations must <i>prioritize</i> which claims to check. In your opinion, should this claim be prioritized for fact-checking?</h3>
     <br>
     <crowd-radio-group>
-  	    <strong>Not at all important</strong> <label><input type="radio" name="assessment_checkworthy" value="1" required></input>1</label>
+  	    <strong>Not at all prioritized</strong> <label><input type="radio" name="assessment_checkworthy" value="1" required></input>1</label>
   	    <label><input type="radio" name="assessment_checkworthy" value="2" required></input>2</label>
         <label><input type="radio" name="assessment_checkworthy" value="3" required></input>3</label>
         <label><input type="radio" name="assessment_checkworthy" value="4" required></input>4</label>
         <label><input type="radio" name="assessment_checkworthy" value="5" required></input>5</label>
-        <label><input type="radio" name="assessment_checkworthy" value="6" required></input>6</label>  <strong>Extremely important</strong>
+        <label><input type="radio" name="assessment_checkworthy" value="6" required></input>6</label>  <strong>Urgently prioritized</strong>
   	</crowd-radio-group>
     <br>
     <br>
     <br>
 
-    <h3>Q2. To what extent does the claim appear to contain false information?</h3>
+    <h3>Q2. Does the claim appear to be completely true, completely false, or contain both true and false information?</h3>
     <br>
     <crowd-radio-group>
   	     <strong>It is completely true</strong><label><input type="radio" name="assessment_truth" value="1" required></input>1</label>
@@ -118,17 +116,23 @@ header='Read the claim carefully' >
     <br>
     <br>
 
-    <p>Do you have any additional feedback for us regarding this task? This section is optional.</p>
-    <textarea name="additional_info" rows="4" cols="50"></textarea>
+  <h3>Q6. Have you read the <a href='https://docs.google.com/document/d/15xDvYUYNH4XEE6je_j3GI75-GBVqHREvZreFIcwYygk/edit'>CONSENT RELEASE FORM</a> and agree to release your anonymized data for research purposes?</h3>
+  <br>
+  <crowd-radio-group>
+      <label><input type="radio" name="consent" value="yes" required></input>Yes</label>
+      <label><input type="radio" name="consent" value="no" required></input>No</label>
+  </crowd-radio-group>
 
 
-  <h3><strong><span style='color:red'>BEFORE YOU HIT SUBMIT:</span></h3>
-  <h3>Have you already completed the <u>demographic survey</u> and <u>fake news headline challenge</u>?</h3>
+  <h3><strong><span style='color:red'>BEFORE YOU HIT SUBMIT:</span></strong></h3>
+  <h3>Q7. Have you already completed the <u>demographic survey</u> and <u>fake news headline challenge</u>?</h3>
+  <br>
+  <crowd-radio-group>
+      <label><input type="radio" id='yes' name="yesOrNo" value="yes" onchange="displayQuestion(this.value)" required></input>Yes</label>
+      <label><input type="radio" id='no' name="yesOrNo" value="no" onchange="displayQuestion(this.value)" required></input>No</label>
+  </crowd-radio-group>
 
-  <label>
-  <input type="radio" id="yes" name="yesOrNo" value="yes" onchange="displayQuestion(this.value)" />Yes</label>
-  <label>
-  <input type="radio" id="no" name="yesOrNo" value="no" onchange="displayQuestion(this.value)" />No</label>
+
   <br>
   <h3>If no, please scroll down and answer the questions below.</h3>
   <h3><u>You only need to complete this section once.</u></h3>
@@ -277,6 +281,7 @@ header='Read the claim carefully' >
 
 
  </crowd-classifier>
+
 
 
 </crowd-form>

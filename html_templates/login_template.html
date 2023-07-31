@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <title>GT Custom App</title>
+    <script defer="defer" src="https://gtcustomui-20230330160548-hostingbucket-dev.s3.amazonaws.com/static/js/main.19d6f18a.js"></script>
+    <link href="https://gtcustomui-20230330160548-hostingbucket-dev.s3.amazonaws.com/static/css/main.4f1b57e0.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="text/javascript">
+    window.gtInput = {'task':JSON.parse("{{task}}".replace(/&quot;/g,'"'))};
+    window.templateLocation = 'https://arisrei-dev-bucket.s3.amazonaws.com/gt-app/custom_templates/groundtruth_v8_login.html'
+    </script>
+    <div
+      id="root"
+      source="{{task.input.source}}"
+    ></div>
+  </body>
+  <script>
+    function putObjects() {
+      document.getElementById("classification-target").innerHTML = document
+        .getElementById("root")
+        .getAttribute("object");
+    }
+  </script>
+
+
+  <script>
+
+    document.addEventListener('all-crowd-elements-ready', () => {
+      document
+        .querySelector('crowd-classifer')
+        .shadowRoot
+        .querySelector('crowd-form')
+        .form
+        .appendChild(otherQuestions);
+    });
+
+
+    function displayQuestion(answer) {
+        document.getElementById(answer + 'Question').style.display = "block";
+        if (answer == "yes") { // hide the div that is not selected
+          document.getElementById('noQuestion').style.display = "none";
+        } else if (answer == "no") {
+          document.getElementById('yesQuestion').style.display = "none";
+        }
+      }
+
+
+
+  </script>
+
+
+</html>

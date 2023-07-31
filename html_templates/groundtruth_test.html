@@ -1,0 +1,36 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<style>input[type=radio] {
+    display: block;
+    margin: 0 auto;
+}
+label {
+    display: inline-block;
+}
+</style>
+
+<crowd-form>
+
+<crowd-classifier
+name="hit_complete"
+categories="['Hello to you', 'Goodbye']"
+header='Read the claim carefully' >
+
+
+
+
+  <classification-target>
+  <br>
+  <h1 style='text-align:center'>Submit this HIT to get your money.</h1>
+  <br>
+
+  <h2 style='font-family:Georgia; color:black; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em; text-align: center'>{{ task.input.source }}</h2>
+
+
+
+  </classification-target>
+
+
+ </crowd-classifier>
+
+
+</crowd-form>

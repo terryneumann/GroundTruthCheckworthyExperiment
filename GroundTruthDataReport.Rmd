@@ -1,0 +1,613 @@
+---
+title: "Analysis of GroundTruth Data"
+author: "Terrence Neumann"
+date: "2023-05-03"
+output: pdf_document
+toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(readxl)
+library(ggthemes)
+library(knitr)
+library(tidyr)
+library(reshape2)
+library(tidytext)
+library(jsonlite)
+
+worker_quality <- read_csv('~/Desktop/Misinformation Detection Paper/GroundTruthCheckworthyExperiment/GroundTruthCheckworthyExperiment/experimental_data_clean/worker_info_clean.csv') 
+
+names(worker_quality)[1] <- 'worker'
+worker_quality <- worker_quality %>%
+  mutate_at(c(5,6,7,8,9), ~replace_na(.,' N/A')) %>%
+  group_by(worker) %>%
+  summarise(Age = max(`demog-age`),
+            Education = max(`demog-educ`),
+            Gender = max(`demog-gender`),
+            Race = max(`demog-race`),
+            SexualOrientation = max(`demog-sexual`),
+            num_questions = sum(num_questions),
+            num_gold = sum(num_gold),
+            num_gold_correct = sum(num_gold_correct),
+            number_jobs = length(unique(job)),
+            number_regions = length(unique(region)),
+            identification_score = 
+              max(`identification-fake-1`, na.rm=T) + 
+              max(`identification-fake-2`, na.rm=T) +
+              max(`identification-fake-3`, na.rm=T) + 
+              max(`identification-fake-4`, na.rm=T) +
+              max(`identification-fake-1`, na.rm=T) + 
+              max(`identification-fake-2`, na.rm=T) +
+              max(`identification-fake-3`, na.rm=T) + 
+              max(`identification-fake-4`, na.rm=T)) %>%
+  mutate(pct_gold_correct = ifelse(num_gold > 0, num_gold_correct / num_gold, 0),
+         identification_score = ifelse(identification_score == -Inf, -100, identification_score)) %>%
+  ungroup() 
+
+
+clean_responses <- read_csv('~/Desktop/Misinformation Detection Paper/GroundTruthCheckworthyExperiment/GroundTruthCheckworthyExperiment/experimental_data_clean/consildated_responses_high_quality.csv')
+raw_responses <- read_csv('~/Desktop/Misinformation Detection Paper/GroundTruthCheckworthyExperiment/GroundTruthCheckworthyExperiment/experimental_data_clean/consolidated_responses_all_workers.csv')
+raw_data <- read_xlsx('~/Desktop/Misinformation Detection Paper/GroundTruthPreExperiment.xlsx') %>%
+  mutate(topic = ifelse(is.na(topic), 'Abortion', topic))
+
+clean_responses <- clean_responses %>%
+  left_join(raw_data, by = c('claim'='source'))
+
+raw_responses <- raw_responses %>%
+  left_join(raw_data, by = c('claim'='source'))
+
+
+```
+
+
+## Assessing Worker Quality
+
+### Threshold for Acceptance Analysis
+```{r q1, echo=FALSE, message=FALSE, warning=FALSE}
+thresh <- seq(0.4, 1, by = 0.05)
+pct_accepted <- c()
+
+for (i in 1:length(thresh)) {
+  good_workers <- subset(worker_quality, num_questions > 2 & pct_gold_correct >= thresh[i])
+  accepted_responses <- subset(raw_responses, worker %in% good_workers$worker)
+  pct_accepted[i] <- sum(good_workers$num_questions)/sum(worker_quality$num_questions)
+}
+
+plot_frame <- data.frame(thresh = thresh, pct_accepted = pct_accepted)
+
+
+ggplot(plot_frame) +
+  geom_line(aes(x = thresh, y = pct_accepted)) +
+  xlim(0.4, 1) +
+  ylim(0, 0.5) +
+  xlab('Worker Acceptance Criteria: % of Gold Questions Correct\n(Having answered at least 2 questions)') +
+  ylab('% of Total Responses Accepted') +
+  scale_y_continuous(labels=scales::percent) +
+  scale_x_continuous(labels=scales::percent) 
+```
+
+A worker acceptance criteria of 80\% on simple gold questions drops the percentage of rows accepted to roughly 8\%. Acceptance criteria of 85\% drops accepted responses to 2\%.
+
+### Questions Answered per Worker
+
+```{r q2, echo=FALSE, message=FALSE, warning=FALSE}
+num_questions <- worker_quality %>%
+  group_by(num_questions) %>%
+  summarise(count = n())
+
+ggplot(num_questions) +
+  geom_bar(aes(x = num_questions, y = count), stat = 'identity') +
+  xlab('Number Questions Answered') +
+  ylab('Number of Workers') +
+  scale_y_continuous(breaks=scales::pretty_breaks()) +
+  scale_x_continuous(breaks=scales::pretty_breaks()) +
+  ggtitle('All Workers')
+
+good_workers <- subset(worker_quality, num_questions > 2 & pct_gold_correct >= 0.80)
+
+num_questions <- good_workers %>%
+  group_by(num_questions) %>%
+  summarise(count = n())
+
+ggplot(num_questions) +
+  geom_bar(aes(x = num_questions, y = count), stat = 'identity') +
+  xlab('Number Questions Answered') +
+  ylab('Number of Workers') +
+  scale_y_continuous(breaks=scales::pretty_breaks()) +
+  scale_x_continuous(breaks=scales::pretty_breaks()) +
+  ggtitle('Workers with > 80% gold correct')
+
+
+```
+
+
+### Summary of "Good" Workers
+
+We define good workers as workers with > 80\% of gold questions correct, having answered at least 2 questions.
+
+```{r q3, echo=FALSE, message=FALSE, warning=FALSE}
+good_workers <- subset(worker_quality, num_questions > 2 & pct_gold_correct >= 0.80) 
+
+knitr::kable(good_workers[,1:6])
+knitr::kable(good_workers[,c(1,7:9,12)], col.names = c('worker', 'Number Questions Answered', 'Number Gold Questions', 'Number Gold Correct', '% Gold Correct'))
+
+```
+
+### Amount Paid to Worker vs % Gold Questions Answered Correctly
+
+```{r q3-1,  echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(subset(worker_quality, num_questions > 5), aes(x=num_questions*0.24, y=pct_gold_correct)) +
+  geom_point() +
+  scale_x_continuous(labels=scales::dollar_format()) +
+  xlab("Amount Paid to Worker") +
+  ylab('Worker Accuracy')
+
+```
+
+### Variance in Check-Worthiness for "Good" Workers (>80% Gold)
+
+```{r q4, echo=FALSE, message=FALSE, warning=FALSE}
+
+accepted_responses <- subset(raw_responses, worker %in% good_workers$worker)
+
+
+ggplot(accepted_responses) +
+  geom_density(aes(x=assessment_checkworthy, fill=worker), alpha=0.4) +
+  facet_wrap(~worker) +
+  xlab('') +
+  ylab('Distribution of Checkworthy Assessments') +
+  theme(legend.position = 'none')
+
+
+```
+
+Most workers have high variance, indicating a good-faith effort in differentiating check-worthiness.
+
+### Variance in Interest to General Public for "Good" Workers (>80% Gold)
+
+```{r q5, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(accepted_responses) +
+  geom_density(aes(x=assessment_general_public, fill=worker), alpha=0.4) +
+  facet_wrap(~worker) +
+  xlab('') +
+  ylab('Distribution of General Public Interest Assessment') +
+  theme(legend.position = 'none')
+
+```
+
+Most workers have high variance, indicating a good-faith effort in differentiating interest to the general public.
+
+### Variance of Checkworthiness of GOLD-TRUE Items by Worker (these should be un-checkworthy)
+
+```{r q6, echo=FALSE, message=FALSE, warning=FALSE}
+accepted_responses_gold_true <- subset(raw_responses, worker %in% good_workers$worker & topic == 'Gold_True')
+
+
+ggplot(accepted_responses_gold_true) +
+  geom_density(aes(x=assessment_checkworthy, fill=worker), alpha=0.4) +
+  facet_wrap(~worker) +
+  xlab('') +
+  ylab('Distribution of Checkworthy Assessments') +
+  theme(legend.position = 'none')
+
+```
+
+Most workers rate the gold-TRUE items as having low check-worthiness. This is what we'd expect, and inidicative of good-faith effort.
+
+## Accepted Response Analysis
+
+### Number of Responses Accepted by Topic
+
+```{r q7, echo=FALSE, message=FALSE, warning=FALSE, fig.height=7}
+accepted_responses_by_topic <- accepted_responses %>%
+  group_by(topic) %>%
+  summarise(
+    UniqueClaimsLabeled = length(unique(claim)),
+    LabelsPerClaim = n()/length(unique(claim)),
+    CheckworthyAssessment = mean(assessment_checkworthy),
+    GroupHarmAssessment = mean(assessment_group_harm),
+    GeneralPublicAssessment = mean(assessment_general_public),
+    TruthAssessment = mean(assessment_truth)) %>%
+  melt(., id.vars = c('topic'))
+
+accepted_responses_ranges <- accepted_responses %>%
+  group_by(topic) %>%
+  summarise(
+    CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+    GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+    GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+    TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+  melt(., id.vars = c('topic')) %>%
+  rename(sd = value)
+
+accepted_responses_by_topic <- accepted_responses_by_topic %>%
+  left_join(accepted_responses_ranges)
+
+ggplot(subset(accepted_responses_by_topic, variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim'))) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable), size=4) +
+  scale_x_reordered() +
+  facet_wrap(~variable, ncol=1 ,scales = 'free') +
+  xlab('Topic') +
+  theme(legend.position = 'none') +
+  coord_flip()
+
+```
+
+Here we see the number of unique claims that have been accepted by topic, as well as the number of annotations per claim within a topic, as not all topics have the same number of claims. The two gold categories have the highest number of annotations per claim, which is expected.
+
+### Mean Responses by Topic
+
+```{r q8, fig.height = 7, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')))) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~variable, scales = 'free') +
+  xlab('Topic') +
+  scale_x_reordered() +
+  coord_flip() +
+  theme(legend.position = 'none')
+
+```
+
+
+This chart shows the average assessment across our accepted sample, as well as +/- 1 standard error. The standard error is used to illuminate agreement/disagreement. In the TruthAssessment panel, Gold_False and Gold_True are at their expected extremes with narrow standard errors, indicating these workers are well-calibrated in their assessments.
+
+### Differences in Response By Gender
+
+```{r q9, echo=FALSE, message=FALSE, warning=FALSE, fig.height=7}
+
+male_worker <- subset(worker_quality, Gender == 'Male')
+female_worker <- subset(worker_quality, Gender == 'Female')
+
+accepted_responses_men <- subset(raw_responses, worker %in% good_workers$worker & worker %in% male_worker$worker)
+accepted_responses_women <- subset(raw_responses, worker %in% good_workers$worker & worker %in% female_worker$worker)
+
+accepted_responses_by_topic <- accepted_responses_men %>%
+  group_by(topic) %>%
+  summarise(
+    UniqueClaimsLabeled = length(unique(claim)),
+    LabelsPerClaim = n()/length(unique(claim)),
+    CheckworthyAssessment = mean(assessment_checkworthy),
+    GroupHarmAssessment = mean(assessment_group_harm),
+    GeneralPublicAssessment = mean(assessment_general_public),
+    TruthAssessment = mean(assessment_truth)) %>%
+  mutate(Gender = 'Men') %>%
+  bind_rows(
+    accepted_responses_women %>%
+      group_by(topic) %>%
+      summarise(
+        UniqueClaimsLabeled = length(unique(claim)),
+        LabelsPerClaim = n()/length(unique(claim)),
+        CheckworthyAssessment = mean(assessment_checkworthy),
+        GroupHarmAssessment = mean(assessment_group_harm),
+        GeneralPublicAssessment = mean(assessment_general_public),
+        TruthAssessment = mean(assessment_truth)) %>%
+      mutate(Gender = 'Women')
+  ) %>%
+  melt(., id.vars = c('topic', 'Gender'))
+
+accepted_responses_ranges <- accepted_responses_men %>%
+  group_by(topic) %>%
+  summarise(
+    CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+    GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+    GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+    TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+  mutate(Gender = 'Men') %>%
+  bind_rows(
+     accepted_responses_women %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+        GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+        GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+        TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+       mutate(Gender = "Women")
+    ) %>%
+  melt(., id.vars = c('topic', 'Gender')) %>%
+  rename(sd = value)
+
+
+accepted_responses_counts <- accepted_responses_women %>%
+  group_by(topic) %>%
+  summarise(
+        CheckworthyAssessment = n(),
+        GroupHarmAssessment = n(),
+        GeneralPublicAssessment = n(),
+        TruthAssessment = n()) %>%
+  mutate(Gender = 'Women') %>%
+  bind_rows(
+     accepted_responses_men %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = n(),
+        GroupHarmAssessment = n(),
+        GeneralPublicAssessment = n(),
+        TruthAssessment = n()) %>%
+       mutate(Gender = "Men")
+    ) %>%
+  melt(., id.vars = c('topic', 'Gender')) %>%
+  rename(count = value)
+
+
+
+accepted_responses_by_topic <- accepted_responses_by_topic %>%
+  left_join(accepted_responses_ranges) %>%
+  left_join(accepted_responses_counts)
+
+
+```
+
+
+```{r q10, fig.height = 7.5, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')) & Gender == 'Men')) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_label(aes(x=reorder_within(topic, value, variable), y=value+sd+1, label=paste0('N: ', count)), size=2) +
+  ylim(1,7) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~ variable, scales = 'free') +
+  xlab('Topic') +
+  scale_x_reordered() +
+  coord_flip() +
+  theme(legend.position = 'none') +
+  ggtitle('Attitudes of Men Towards Topics')
+```
+
+
+```{r q11, fig.height= 7.5, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')) & Gender == 'Women')) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_label(aes(x=reorder_within(topic, value, variable), y=value+sd+1, label=paste0('N: ', count)), size=2) +
+  ylim(1,7) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~ variable, scales = 'free') +
+  xlab('Topic') +
+  scale_x_reordered() +
+  coord_flip() +
+  theme(legend.position = 'none') +
+  ggtitle('Attitudes of Women Towards Topics')
+```
+
+
+\newpage
+
+### Largest Gender Differences by Item
+
+```{r q12, echo=FALSE, message=FALSE, warning=FALSE}
+
+checkworthy_by_gender <- accepted_responses %>%
+  left_join(worker_quality) %>%
+  group_by(claim, Gender) %>%
+  summarise(
+    assessment_checkworthy = mean(assessment_checkworthy)
+  ) %>%
+  dcast(., claim ~ Gender) %>%
+  left_join(
+    accepted_responses %>%
+      left_join(worker_quality) %>%
+      group_by(claim, Gender) %>%
+      summarise(
+        count = n()
+      ) %>%
+      dcast(., claim ~ Gender) %>%
+      select(-2)
+  ) %>%
+  select(-2) %>%
+  mutate(difference = abs(Male - Female)) %>%
+  arrange(desc(difference))
+
+
+general_public_by_gender <- accepted_responses %>%
+  left_join(worker_quality) %>%
+  group_by(claim, Gender) %>%
+  summarise(
+    assessment_general_public = round(mean(assessment_general_public), 2)
+  ) %>%
+  dcast(., claim ~ Gender) %>%
+  select(-2) %>%
+  mutate(difference = round(abs(Male - Female), 2)) %>%
+  arrange(desc(difference))
+
+
+knitr::kable(head(checkworthy_by_gender), caption = 'Checkworthiness by Gender')
+knitr::kable(head(general_public_by_gender), caption = 'Interest to the General Public by Gender')
+
+
+
+```
+
+An abortion item sparks the largest disagreement in check-worthiness, with women rating it as highly check-worthy and men rating is as not check-worthy.
+
+### Differences in Response By Information Literacy 
+
+```{r q13, echo=FALSE, message=FALSE, warning=FALSE}
+
+worker_quality <- worker_quality %>%
+  mutate(information_literacy = 
+           ifelse(identification_score %in% c(0,1,2,3,4), 'Low',
+                  ifelse(identification_score %in% c(5, 6), 'Medium',
+                         ifelse(identification_score %in% c(7, 8), 'High', 
+                                'No Response'))))
+
+good_workers <- subset(worker_quality, num_questions > 2 & pct_gold_correct >= 0.80) 
+
+low_worker <- subset(good_workers, information_literacy == 'Low')
+medium_worker <- subset(good_workers, information_literacy == 'Medium')
+high_worker <- subset(good_workers, information_literacy == 'High')
+na_worker <- subset(good_workers, information_literacy == 'No Response')
+
+accepted_responses_low <- subset(raw_responses, worker %in% good_workers$worker & worker %in% low_worker$worker)
+accepted_responses_medium <- subset(raw_responses, worker %in% good_workers$worker & worker %in% medium_worker$worker)
+accepted_responses_high <- subset(raw_responses, worker %in% good_workers$worker & worker %in% high_worker$worker)
+
+
+accepted_responses_by_topic <- accepted_responses_low %>%
+  group_by(topic) %>%
+  summarise(
+    UniqueClaimsLabeled = length(unique(claim)),
+    LabelsPerClaim = n()/length(unique(claim)),
+    CheckworthyAssessment = mean(assessment_checkworthy),
+    GroupHarmAssessment = mean(assessment_group_harm),
+    GeneralPublicAssessment = mean(assessment_general_public),
+    TruthAssessment = mean(assessment_truth)) %>%
+  mutate(Literacy = 'Low') %>%
+  bind_rows(
+    accepted_responses_medium %>%
+      group_by(topic) %>%
+      summarise(
+        UniqueClaimsLabeled = length(unique(claim)),
+        LabelsPerClaim = n()/length(unique(claim)),
+        CheckworthyAssessment = mean(assessment_checkworthy),
+        GroupHarmAssessment = mean(assessment_group_harm),
+        GeneralPublicAssessment = mean(assessment_general_public),
+        TruthAssessment = mean(assessment_truth)) %>%
+      mutate(Literacy = 'Medium')
+  ) %>%
+  bind_rows(
+    accepted_responses_high %>%
+      group_by(topic) %>%
+      summarise(
+        UniqueClaimsLabeled = length(unique(claim)),
+        LabelsPerClaim = n()/length(unique(claim)),
+        CheckworthyAssessment = mean(assessment_checkworthy),
+        GroupHarmAssessment = mean(assessment_group_harm),
+        GeneralPublicAssessment = mean(assessment_general_public),
+        TruthAssessment = mean(assessment_truth)) %>%
+      mutate(Literacy = 'High')
+  ) %>%
+  melt(., id.vars = c('topic', 'Literacy'))
+
+accepted_responses_ranges <- accepted_responses_low %>%
+  group_by(topic) %>%
+  summarise(
+    CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+    GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+    GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+    TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+  mutate(Literacy = 'Low') %>%
+  bind_rows(
+     accepted_responses_medium %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+        GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+        GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+        TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+       mutate(Literacy = "Medium")
+    ) %>%
+  bind_rows(
+    accepted_responses_high %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = sd(assessment_checkworthy)/sqrt(length(unique(claim))),
+        GroupHarmAssessment = sd(assessment_group_harm)/sqrt(length(unique(claim))),
+        GeneralPublicAssessment = sd(assessment_general_public)/sqrt(length(unique(claim))),
+        TruthAssessment = sd(assessment_truth)/sqrt(length(unique(claim)))) %>%
+       mutate(Literacy = "High")
+  ) %>%
+  melt(., id.vars = c('topic', 'Literacy')) %>%
+  rename(sd = value)
+
+
+accepted_responses_counts <- accepted_responses_low %>%
+  group_by(topic) %>%
+  summarise(
+        CheckworthyAssessment = n(),
+        GroupHarmAssessment = n(),
+        GeneralPublicAssessment = n(),
+        TruthAssessment = n()) %>%
+  mutate(Literacy = 'Low') %>%
+  bind_rows(
+     accepted_responses_medium %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = n(),
+        GroupHarmAssessment = n(),
+        GeneralPublicAssessment = n(),
+        TruthAssessment = n()) %>%
+       mutate(Literacy = "Medium")
+    ) %>%
+  bind_rows(
+    accepted_responses_high %>%
+      group_by(topic) %>%
+      summarise(
+        CheckworthyAssessment = n(),
+        GroupHarmAssessment = n(),
+        GeneralPublicAssessment = n(),
+        TruthAssessment = n()) %>%
+       mutate(Literacy = "High")
+  ) %>%
+  melt(., id.vars = c('topic', 'Literacy')) %>%
+  rename(count = value)
+
+
+
+
+
+accepted_responses_by_topic <- accepted_responses_by_topic %>%
+  left_join(accepted_responses_ranges) %>%
+  left_join(accepted_responses_counts)
+
+
+```
+
+
+```{r q14,  fig.height=7.5, echo=FALSE, message=FALSE, warning=FALSE}
+
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')) & Literacy == 'High')) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_label(aes(x=reorder_within(topic, value, variable), y=value+sd+1, label=paste0('N: ', count)), size=2) +
+  ylim(1,7) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~ variable, scales = 'free') +
+  xlab('Topic') +
+  scale_x_reordered() +
+  coord_flip() +
+  theme(legend.position = 'none') +
+  ggtitle('Attitudes of High Media Literacy Towards Topics')
+
+
+
+```
+
+
+```{r q15,  fig.height=7.5, echo=FALSE, message=FALSE, warning=FALSE}
+
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')) & Literacy == 'Medium')) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_label(aes(x=reorder_within(topic, value, variable), y=value+sd+1, label=paste0('N: ', count)), size=2) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~ variable, scales = 'free') +
+  xlab('Topic') +
+  ylim(1,7) +
+  scale_x_reordered() +
+  coord_flip() +
+  theme(legend.position = 'none') +
+  ggtitle('Attitudes of Medium Media Literacy Towards Topics')
+
+
+
+```
+
+```{r q16,  fig.height=7.5, echo=FALSE, message=FALSE, warning=FALSE}
+
+ggplot(subset(accepted_responses_by_topic, !(variable %in% c('UniqueClaimsLabeled', 'LabelsPerClaim')) & Literacy == 'Low')) +
+  geom_point(aes(x=reorder_within(topic, value, variable), y=value, color=variable),size=4) +
+  geom_label(aes(x=reorder_within(topic, value, variable), y=value+sd+1, label=paste0('N: ', count)),size=2) +
+  geom_errorbar(aes(x=reorder_within(topic, value, variable), ymin=value-sd, ymax=value+sd, color=variable)) +
+  facet_wrap(~ variable, scales = 'free') +
+  xlab('Topic') +
+  scale_x_reordered() +
+  ylim(1,7) +
+  coord_flip() +
+  theme(legend.position = 'none') +
+  ggtitle('Attitudes of Low Media Literacy Towards Topics')
+
+
+
+```
+

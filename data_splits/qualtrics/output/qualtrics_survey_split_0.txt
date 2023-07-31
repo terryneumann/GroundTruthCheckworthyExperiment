@@ -1,0 +1,1044 @@
+[[Block: Demographic Survey]]
+
+
+<h1 style='color:#CC4415; font-family:Georgia;'>FACT-CHECKING SURVEY</h1>
+
+
+
+<p>You will read claims that are currently or have recently been trending on social media. These claims could be verified as either being true or false by fact-checkers.
+    We are curious about your opinions regarding the assertions made in these claims; please read each claim carefully and answer honestly. Your opinions matter! They will help inform better fact-checking systems.</p>
+
+
+
+<p>We intend to create a dataset of true or false news/news-like content as well as annotations about the content. If you do not consent to your annotations (anonymized) being included in the released dataset, then you are not eligible to participate in this study. 
+  Please read the following <a href='https://docs.google.com/document/d/15xDvYUYNH4XEE6je_j3GI75-GBVqHREvZreFIcwYygk/view'>CONSENT RELEASE FORM</a>. By continuing with the experiment, you consent to your data being collected and released. If you do not consent, please release the survey now.</p>
+
+
+
+<p><strong><u>WORK WILL BE MONITORED FOR QUALITY. WORKERS SUBMITTING POOR QUALITY WORK WILL BE BARRED FROM FUTURE WORK.</u></strong></p>
+
+
+[[PageBreak]]
+
+
+<h2>First, please fill out this optional demographic survey.</h2>
+
+
+<h3>Select your gender.</h3>
+<select name="demog-gender" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Male</option>
+  <option>Female</option>
+  <option>Non-Binary</option>
+  <option>Other</option>
+</select>
+
+
+<h3>Select your race.</h3>
+<select name="demog-race" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Asian</option>
+  <option>White</option>
+  <option>Black</option>
+  <option>Hispanic</option>
+  <option>Other</option>
+</select>
+
+
+<h3>Select your age range.</h3>
+<select name="demog-age" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Less than 20 years old</option>
+  <option>21-30 years old</option>
+  <option>31-40 years old</option>
+  <option>41-50 years old</option>
+  <option>51-60 years old</option>
+  <option>More than 60 years old</option>
+</select>
+
+
+<h3>Select your highest educational attainment.</h3>
+<select name="demog-educ" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>No High School</option>
+  <option>High School Diploma</option>
+  <option>Some College</option>
+  <option>Bachelor's Degree</option>
+  <option>Master's Degree</option>
+  <option>PhD or other doctorate</option>
+</select>
+
+
+<h3>Select your sexual orientation.</h3>
+<select name="demog-sexual" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Heterosexual</option>
+  <option>Homosexual</option>
+  <option>Bisexual</option>
+  <option>Asexual</option>
+  <option>Other</option>
+</select>
+
+
+<h2>Fake News Headline Challenge</h2>
+<p>How good are you at spotting fake news headlines? Please examine the following news headlines and categorize them as either Fake/Deceptive or Real/Factual.</p>
+
+
+<h3>Certain Vaccines are Loaded with Dangerous Chemicals and Toxins</h3>
+<select name="identification-fake-1" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>Global Warming Age Gap: Younger Americans Most Worried</h3>
+<select name="identification-real-1" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>New Study: Left-Wingers Are More Likely to Lie to Get a Higher Salary</h3>
+<select name="identification-fake-2" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>The Government Is Knowingly Spreading Disease Through the Airwaves and Food Supply</h3>
+<select name="identification-fake-3" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>Attitudes Toward EU Are Largely Positive, Both Within Europe and Outside It</h3>
+<select name="identification-real-2" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>Hyatt Will Remove Small Bottles from Hotel Bathrooms by 2021</h3>
+<select name="identification-real-3" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>Government Officials Have Manipulated Stock Prices to Hide Scandals</h3>
+<select name="identification-fake-4" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+
+
+<h3>Republicans Divided in Views of Trump’s Conduct, Democrats Are Broadly Critical</h3>
+<select name="identification-real-4" style="font-size: large">
+  <option value="">(Please select)</option>
+  <option>Real/Actual</option>
+  <option>Fake/Deceptive</option>
+</select>
+[[Block:Normal Block 1]]
+
+Q1a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: "Food crops can be engineered right now based on existing technology to cause infertility in Black people alone.”</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q1b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 1]]
+
+Q2a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Water is a liquid at room temperature.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q2b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 2]]
+
+Q3a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: The U.S. government shot down an "aerial target drone" over Alaska for PR purposes.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q3b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 2]]
+
+Q4a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: A week contains seven days.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q4b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 3]]
+
+Q5a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: The CEO of Bud Light resigned following a conservative backlash to partnering with a transgender social media influencer.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q5b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 3]]
+
+Q6a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Apples are a type of fruit.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q6b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 4]]
+
+Q7a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Abortions can be induced using pills.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q7b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 4]]
+
+Q8a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: If you mix water and sand in a blender, you'll create a new type of energy that can power a small town for a week.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q8b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 5]]
+
+Q9a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Walgreens sells abortion pills</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q9b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 5]]
+
+Q10a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: The world's tallest tree forms a bridge from Earth to Mars.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q10b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 6]]
+
+Q11a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: During a trip to Ireland in April 2023, U.S. President Joe Biden confused New Zealand's "All Blacks" national rugby team for the "Black and Tans," a British paramilitary force of the 1920s known for its brutality against the Irish people.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q11b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 6]]
+
+Q12a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: If you wear a hat made out of aluminum foil, you can communicate telepathically with dolphins.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q12b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 7]]
+
+Q13a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Harvard is teaching medical students to treat transgender infants</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q13b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Gold Block 7]]
+
+Q14a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: An almond is a type of nut.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q14b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 8]]
+
+Q15a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: A California ballot measure would 'extend abortions up to 9 months'</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q15b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 9]]
+
+Q16a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: "4.2 million illegal aliens have crossed since Joe Biden became president"</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q16b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 10]]
+
+Q17a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: A 12-year-old girl who gets an abortion in Alabama is thrown in prison for life</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q17b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 11]]
+
+Q18a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: "Every Senate Democrat voted against deporting criminal illegal immigrants."</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q18b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 12]]
+
+Q19a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: "Under President Trump, the federal government achieved historically low levels of illegal immigration."</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q19b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 13]]
+
+Q20a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: The governments of the United States and the Philippines recently sent 17,680 soldiers to the West Philippine Sea which resulted in the expulsion of Chinese boats from the contested waters. Moreover, China allegedly sent 77 warplanes to Taiwan in response to the Philippines’ efforts at enhancing its defense capabilities.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q20b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 14]]
+
+Q21a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Michele Flournoy, former United States defense undersecretary under the administration of former president Barack Obama, recently suggested sinking all Chinese military vessels within 72 hours to strengthen the US Army’s deterrence.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q21b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 15]]
+
+Q22a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Abortion cause permanent psychological and mental damage, including ‘post-abortion syndrome’.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q22b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 16]]
+
+Q23a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: The longest recorded field goal was made from a distance of 64 yards.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q23b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 17]]
+
+Q24a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Chicago, IL had just over 9000 murders in 2022, the most of any city in America.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q24b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 18]]
+
+Q25a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: “U.S. biolabs in Ukraine” could be involved in “possible biological warfare”</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q25b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 19]]
+
+Q26a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Biden said sending tanks to Ukraine would be the start of World War III</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q26b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 20]]
+
+Q27a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: A committee has proposed that the city of San Francisco give $5 million each to qualifying Black people as part of a reparations plan to cover “economic and opportunity losses” the community has endured throughout history, both due to the city’s policies and the wider effects of societal discrimination.</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q27b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
+[[Block:Normal Block 21]]
+
+Q28a. <h2 style="font-family:Georgia; border-width:10px; border-style:solid; border-color:#CC4415; padding: 1em;">Claim: Reporters trying to get in are being arrested' after Ohio derailment</h2>
+
+Considering that fact-checkers have limited time to check claims, should this claim be prioritized for fact-checking?
+Does the claim appear to be completely false?
+Will this claim be of interest to the general public?
+Will this claim harm certain demographic groups more than others if it is left unverified?
+
+1 - Definitely Not
+2 - Probably Not
+3 - Maybe Not
+4 - Maybe Yes
+5 - Probably Yes
+6 - Definitely Yes
+
+
+Q28b. If you believe this claim could harm certain demographic groups if left unverified, please select which groups from the list below. If you don't believe the claim would disproportionately harm certain groups, choose "N/A".
+[[MultipleAnswer]]
+
+<strong style="color:green">RACE</strong> - White
+<strong style="color:green">RACE</strong> - African American
+<strong style="color:green">RACE</strong> - Hispanic
+<strong style="color:green">RACE</strong> - East or South Asian
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - LGBTQ
+<strong style="color:orange">SEXUAL ORIENTATION</strong> - Heterosexual
+<strong style="color:blue">GENDER</strong> - Men
+<strong style="color:blue">GENDER</strong> - Women
+<strong style="color:blue">GENDER</strong> - Non-binary
+<strong>N/A</strong>
+
+
